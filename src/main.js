@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Button, Row, Col } from 'vant'
-Vue.use(Button).use(Row).use(Col)
+// import VueAwesomeSwiper from 'vue-awesome-swiper';
+// import 'swiper/dist/css/swiper.css'
+import { Cell, CellGroup, Tabbar, TabbarItem, Stepper, PullRefresh, Tab, Tabs, Button, Row, Col, Swipe, SwipeItem, Lazyload, List, Field, NavBar } from 'vant'
+Vue.use(Button).use(Cell).use(CellGroup).use(Tabbar).use(TabbarItem).use(Stepper).use(PullRefresh).use(Row).use(Col).use(Swipe).use(SwipeItem).use(Lazyload).use(List).use(Field).use(NavBar).use(Tab).use(Tabs)
 
 
 Vue.config.productionTip = false
