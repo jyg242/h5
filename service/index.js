@@ -8,7 +8,8 @@ const goods = require('./appAPI/goods')
 const bodyParser = require('koa-bodyparser')
 const cors = require('koa2-cors')
 let router = new Router()
-    // cors解决跨域
+const hostname = process.env.NODE_ENV == "production" ? '172.19.56.164' : 'localhost';
+// cors解决跨域
 app.use(cors())
     // bodyParser中间件接收post请求
 app.use(bodyParser())
@@ -28,6 +29,6 @@ app.use(async(ctx) => {
     ctx.body = '<h1>hello koa2</h1>'
 })
 
-app.listen(3000, () => {
+app.listen(3000, hostname, () => {
     console.log('服务器创建成功')
 })
