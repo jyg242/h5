@@ -17,7 +17,7 @@
             "repo": "https://github.com/jyg242/h5.git",
             "path": "/www/web/h5-vue",
             "pre-deploy": "git fetch --all",
-            "post-deploy": "npm install && npm run dev && pm2 startOrRestart ecosystem.json --env production"
+            "post-deploy": "npm install && npm run build && pm2 startOrRestart ecosystem.json --env production"
         }
     }
 }
