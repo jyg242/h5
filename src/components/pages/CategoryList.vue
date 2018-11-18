@@ -52,6 +52,7 @@
 import axios from 'axios'
 import { Toast } from 'vant';
 import {toMoney} from '../filter/moneyFilter.js'
+import config from '@/config'
     export default {
         data() {
             return {
@@ -83,7 +84,7 @@ import {toMoney} from '../filter/moneyFilter.js'
         },
       methods: {
           async getCategory() {
-              let {status,data:{code,message}}=await axios.get('http://127.0.0.1:3000/goods/getCategoryList')
+              let {status,data:{code,message}} = await axios.get(`http://${config.API}:3000/goods/getCategoryList`)
             //   console.log(status)
               if(code==200&&message){
                   this.category=message
@@ -102,7 +103,7 @@ import {toMoney} from '../filter/moneyFilter.js'
           },
         //   根据大类ID读取小类类别列表
           async getCategorySubByCateID(categoryId){
-              let {status,data:{code,message}}=await axios.post('http://127.0.0.1:3000/goods/getCategorySubList',{
+              let {status,data:{code,message}}=await axios.post(`http://${config.API}:3000/goods/getCategorySubList`,{
                   categoryId:categoryId
               })
               
@@ -137,7 +138,7 @@ import {toMoney} from '../filter/moneyFilter.js'
         },
         async getGoodList(){
             // console.log('执行getGoodList')
-            let {status,data:{code,message}}=await axios.post('http://127.0.0.1:3000/goods/getGoodsListByCategorySubID',{
+            let {status,data:{code,message}}=await axios.post(`http://${config.API}:3000/goods/getGoodsListByCategorySubID`,{
                 categorySubId:this.categorySubId,
                 page:this.page
             })

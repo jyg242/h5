@@ -29,6 +29,6 @@ app.use(async(ctx) => {
     ctx.body = '<h1>hello koa2</h1>'
 })
 
-app.listen(3000, hostname, () => {
+app.listen(3001, hostname, () => {
     console.log('服务器创建成功')
 })

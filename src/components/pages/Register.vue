@@ -36,6 +36,8 @@
 <script>
 import axios from 'axios'
 import {Toast} from 'vant';
+import config from '@/config';
+
     export default {
        data() {
                return {
@@ -57,7 +59,7 @@ import {Toast} from 'vant';
            async Register(){
                this.openLoading=true;
                let {status,data:{code,message}}=await axios({
-                   url:'http://127.0.0.1:3000/user/register',
+                   url:`http://${config}:3000/user/register`,
                    method:'post',
                    data:{
                        userName:this.username,

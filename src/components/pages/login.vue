@@ -36,6 +36,7 @@
 <script>
 import axios from 'axios'
 import {Toast, ContactCard} from 'vant';
+import config from '@/config';
     export default {
        data() {
                return {
@@ -63,7 +64,7 @@ import {Toast, ContactCard} from 'vant';
            async login(){
                this.openLoading=true;
                let {status,data:{code,message}}=await axios({
-                   url:'http://127.0.0.1:3000/user/login',
+                   url:`http://${config.API}:3000/user/login`,
                    method:'post',
                    data:{
                        userName:this.username,

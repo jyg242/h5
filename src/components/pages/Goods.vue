@@ -39,6 +39,8 @@
 import axios from 'axios'
 import url from '@/serviceAPI.config.js'
 import { Toast } from 'vant';
+import config from '@/config'
+
 import {toMoney} from '../../components/filter/moneyFilter.js'
     export default {
         data() {
@@ -50,7 +52,7 @@ import {toMoney} from '../../components/filter/moneyFilter.js'
         },
         methods: {
             async getInfo() {
-                let {status,data:{code,message}}=await axios.post('http://127.0.0.1:3000/goods/getDetailGoodsInfo',{
+                let {status,data:{code,message}}=await axios.post(`http://${config.API}:3000/goods/getDetailGoodsInfo`,{
                     goodsId:this.goodsId
                 })
                 if(code==200&&message){  
