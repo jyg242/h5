@@ -9,8 +9,6 @@ import Cart from '@/components/pages/Cart';
 import Main from '@/components/pages/Main';
 import Menber from '@/components/pages/Menber';
 
-
-
 Vue.use(Router)
 
 export default new Router({
