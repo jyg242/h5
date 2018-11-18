@@ -59,7 +59,7 @@ import config from '@/config';
            async Register(){
                this.openLoading=true;
                let {status,data:{code,message}}=await axios({
-                   url:`http://${config}:3000/user/register`,
+                   url:`http://${config.API}:3000/user/register`,
                    method:'post',
                    data:{
                        userName:this.username,
